@@ -1,9 +1,6 @@
 import React from 'react'
 
 export default function WeatherForm(props) {
-
-
-
     return (
         <div>
         <form onSubmit={props.updateWeather}>
