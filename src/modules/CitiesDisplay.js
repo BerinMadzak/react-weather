@@ -9,7 +9,3 @@ export default function CitiesDisplay(props) {
         </div>
     )
 }
-
-//cityList.data.map((city) => {
-//    return <h1>{city.city}</h1>
-// })

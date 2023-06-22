@@ -14,7 +14,7 @@ function App() {
   const [cityList, setCityList] = useState(null);
 
   const loadCities = () => {
-    Axios.get(`${options.url}?minPopulation=5000&namePrefix=${city}&types=CITY`, options).then((res)=>{
+    Axios.get(`${options.url}?minPopulation=50000&namePrefix=${city}&types=CITY`, options).then((res)=>{
       setCityList(res.data);
     }).catch((error)=>{
       console.error(error);
@@ -48,8 +48,8 @@ function App() {
     <div className="App">
      <h1>Weather Forecast</h1>
      <WeatherForm changeCity={changeCity} updateWeather={updateWeather} city={city}/>
-     {data && <WeatherDisplay data={data}/>}
      {cityList && <CitiesDisplay data={cityList.data} selectCity={selectCity}/>}
+     {data && <WeatherDisplay data={data}/>}
     </div>
   );
 }
