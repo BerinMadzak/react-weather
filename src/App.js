@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, createContext} from 'react';
 import './App.css';
 import Axios from "axios";
 import { options } from './API/cities';
-import WeatherForm from './modules/WeatherForm';
-import WeatherDisplay from './modules/WeatherDisplay';
-import CitiesDisplay from './modules/CitiesDisplay';
+import WeatherForm from './components/WeatherForm';
+import WeatherDisplay from './components/WeatherDisplay';
+
+export const AppContext = createContext();
 
 function App() {
   const API_KEY = "aaf74755564092f3b32a667ec14a4493";
@@ -46,10 +47,11 @@ function App() {
 
   return (
     <div className="App">
-     <h1>Weather Forecast</h1>
-     <WeatherForm changeCity={changeCity} updateWeather={updateWeather} city={city}/>
-     {cityList && <CitiesDisplay data={cityList.data} selectCity={selectCity}/>}
-     {data && <WeatherDisplay data={data}/>}
+      <AppContext.Provider value={{cityList, selectCity}}>
+      <h1>Weather Forecast</h1>
+      <WeatherForm changeCity={changeCity} updateWeather={updateWeather} city={city}/>
+      {data && <WeatherDisplay data={data}/>}
+      </AppContext.Provider>
     </div>
   );
 }
