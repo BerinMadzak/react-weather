@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider value={{cityList, selectCity}}>
-      <h1>Weather Forecast</h1>
+      <h1 className='text-color'>Weather Forecast</h1>
       <WeatherForm changeCity={changeCity} updateWeather={updateWeather} city={city}/>
       {data && <WeatherDisplay data={data}/>}
       </AppContext.Provider>

@@ -1,3 +1,7 @@
+body{
+  background: lightslategrey;
+}
+
 .App {
   text-align: center;
 }
@@ -37,4 +41,66 @@ form
   display: flex;
   place-content: center;
   margin-left: 5%;
+}
+
+.weather-display
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+              "Icon Title Title Title"
+              "Icon Weather Weather Weather"
+              "Temp Feels Humidity Wind";
+  width: 30%;
+  margin: auto;
+  margin-top: 2rem;
+  border: 1px solid black;
+  background: linear-gradient(90deg, #a5ced2, #3c5776);
+}
+
+.weather-icon
+{
+  grid-area: Icon;
+}
+
+.city-name
+{
+  grid-area: Title;
+  font-size: 2rem;
+  margin-left: -30%;
+  text-decoration: underline;
+}
+
+.city-weather
+{
+  grid-area: Weather;
+  font-size: 3rem;
+  margin-top: 0%;
+  margin-left: -30%;
+}
+
+.city-temperature
+{
+  grid-area: Temp;
+}
+
+.city-feels-like
+{
+  grid-area: Feels;
+}
+
+.city-humidity
+{
+  grid-area: Humidity;
+}
+
+.city-wind
+{
+  grid-area: Wind;
+}
+
+.text-color
+{
+  color:white;
 }
