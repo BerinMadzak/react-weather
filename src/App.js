@@ -25,6 +25,7 @@ function App() {
   const selectCity = (city) => {
     setCity(city);
     setCityList(null);
+    updateWeatherManual(city);
   }
 
   const changeCity = (e) => {
@@ -38,6 +39,17 @@ function App() {
     if(city === "") return;
 
     Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+        .then((res)=>{
+          setData(res.data);
+        }).catch((error)=>{
+          console.error(error);
+        });
+  }
+
+  const updateWeatherManual = (cityNew) => {
+    if(cityNew === "") return;
+
+    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityNew}&appid=${API_KEY}&units=metric`)
         .then((res)=>{
           setData(res.data);
         }).catch((error)=>{
