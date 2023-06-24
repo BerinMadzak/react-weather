@@ -8,8 +8,6 @@ import WeatherDisplay from './components/WeatherDisplay';
 export const AppContext = createContext();
 
 function App() {
-  const API_KEY = "aaf74755564092f3b32a667ec14a4493";
-
   const [city, setCity] = useState("");
   const [data, setData] = useState(null);
   const [cityList, setCityList] = useState(null);
@@ -38,7 +36,7 @@ function App() {
 
     if(city === "") return;
 
-    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_KEY}&units=metric`)
         .then((res)=>{
           setData(res.data);
         }).catch((error)=>{
@@ -49,7 +47,7 @@ function App() {
   const updateWeatherManual = (cityNew) => {
     if(cityNew === "") return;
 
-    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityNew}&appid=${API_KEY}&units=metric`)
+    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityNew}&appid=${process.env.REACT_APP_WEATHER_KEY}&units=metric`)
         .then((res)=>{
           setData(res.data);
         }).catch((error)=>{
