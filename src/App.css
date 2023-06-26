@@ -104,3 +104,141 @@ form
 {
   color:white;
 }
+
+@media screen and (max-width: 768px)
+{
+  .city-input
+  {
+    min-width: 40rem;
+  }
+
+  .weather-icon
+  {
+    width: 120%;
+  }
+
+  .city-name
+  {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .city-weather
+  {
+    font-size: 2rem;
+    margin-top: -1rem;
+  }
+
+  .weather-display
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+                "Icon Title Title "
+                "Icon Weather Weather"
+                "Temp Temp Temp"
+                "Feels Feels Feels"
+                "Humidity Humidity Humidity"
+                "Wind Wind Wind";
+  }
+
+  .city-temperature
+  {
+    margin-top: -1rem;
+  }
+
+  .city-feels-like
+  {
+    margin-top: -1rem;
+  }
+
+  .city-humidity
+  {
+    margin-top: -1rem;
+  }
+
+  .city-wind
+  {
+    margin-top: -1rem;
+  }
+
+  .cities-display
+  {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 380px)
+{
+  .city-input
+  {
+    min-width: 20rem;
+  }
+
+  .weather-icon
+  {
+    width: 120%;
+  }
+
+  .city-name
+  {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .city-weather
+  {
+    font-size: 1.2rem;
+    margin-top: -0.2rem;
+  }
+
+  .weather-display
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+                "Icon Title Title "
+                "Icon Weather Weather"
+                "Temp Temp Temp"
+                "Feels Feels Feels"
+                "Humidity Humidity Humidity"
+                "Wind Wind Wind";
+  }
+
+  .city-temperature
+  {
+    margin-top: -1rem;
+  }
+
+  .city-feels-like
+  {
+    margin-top: -1rem;
+  }
+
+  .city-humidity
+  {
+    margin-top: -1rem;
+  }
+
+  .city-wind
+  {
+    margin-top: -1rem;
+  }
+
+  .cities-display
+  {
+    width: 100%;
+  }
+
+  .text-color
+  {
+    font-size: 100%;
+  }
+}
+
