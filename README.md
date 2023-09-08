@@ -1,4 +1,4 @@
-#React Weather
+# React Weather
 
 Practice project - a weather forecast app made using React. The goal of the project is learning the basics of React and fetching data using APIs.
 
